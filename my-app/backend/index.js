@@ -72,12 +72,12 @@ const port =  process.env.PORT || 5000; // Port for the backend server
 
 
 // app.use(cors()); // Enable CORS
-app.use(cors(
-    // origin: 'https://projectname2024.vercel.app',
-    // // origin : 'http://localhost:5173',
-    // methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    // credentials: true
-));
+app.use(cors({
+    origin: 'https://new-repo-bice.vercel.app/',
+    // origin : 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 
 
 app.use(bodyParser.json()); // Parse JSON data
@@ -128,5 +128,5 @@ app.post('/api/submit', async(req, res) => {
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server is running on http: ${port}`);
+    console.log(`Server is running on http:,${process.env.HOST} ${port}`);
 });
