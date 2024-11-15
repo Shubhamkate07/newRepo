@@ -1,0 +1,111 @@
+                                    .form-container {
+                                        height: 450px;
+                                        width: 650px;
+                                        overflow: hidden;
+                                    }
+                                    
+                                    .new {
+                                        margin-bottom: 1.35em;
+                                    }
+                                    
+                                    .body {
+                                        width: 1300px;
+                                    }
+                                    
+                                    .main-div {
+                                        width: auto;
+                                        margin: 0 auto;
+                                        /* Centers the element horizontally */
+                                        /* text-align: center; */
+                                        padding: 80px;
+                                        /* Centers text inside .main-div */
+                                    }
+                                    
+                                    @media screen and(max-width: 600px) {
+                                        .responsive-image {
+                                            display: none !important;
+                                            height: 0 !important;
+                                        }
+                                        .gen {
+                                            padding-left: 16px;
+                                            padding-top: 10px;
+                                        }
+                                    }
+                                    
+                                    @media (min-width: 1200px) {
+                                        .form-container {
+                                            max-width: 800px;
+                                            margin: 0 auto;
+                                        }
+                                        .MuiTextField-root {
+                                            margin-bottom: 16px;
+                                        }
+                                    }
+                                    
+                                    @media (max-width: 1199px) {
+                                        .form-container {
+                                            max-width: 600px;
+                                        }
+                                        .MuiTextField-root {
+                                            font-size: 0.9rem;
+                                        }
+                                    }
+                                    
+                                    @media (max-width: 768px) {
+                                        .form-container {
+                                            padding: 15px;
+                                        }
+                                        .MuiTextField-root {
+                                            font-size: 0.8rem;
+                                        }
+                                        .MuiGrid-root {
+                                            flex-direction: column;
+                                        }
+                                        .MuiButton-root {
+                                            font-size: 0.85rem;
+                                        }
+                                    }
+                                    
+                                    @media (max-width: 600px) and (min-width: 300px) {
+                                        .form-container {
+                                            width: 100%;
+                                            max-width: 350px;
+                                            padding: 10px;
+                                            margin: 0 auto;
+                                        }
+                                        .MuiGrid-container {
+                                            display: flex;
+                                            flex-direction: column;
+                                        }
+                                        /* .MuiGrid-item {
+                                                width: 100%;
+                                                max-width: 100%;
+                                                margin-bottom: 16px;
+                                            } */
+                                        .MuiTextField-root {
+                                            width: 100%;
+                                        }
+                                        .MuiButton-root {
+                                            width: 100%;
+                                            margin-top: 8px;
+                                        }
+                                    }
+                                    
+                                    @media (max-width: 600px) and (min-width: 300px) {
+                                        .MuiGrid-item {
+                                            flex-basis: 100% !important;
+                                            max-width: 100% !important;
+                                        }
+                                        .MuiGrid-item .gen {
+                                            padding-left: 16px;
+                                            padding-top: 10px;
+                                        }
+                                        .MuiButton-root {
+                                            width: 100%;
+                                            margin-top: 8px;
+                                        }
+                                        .form-container {
+                                            height: 670px;
+                                            width: 350px;
+                                        }
+                                    }
