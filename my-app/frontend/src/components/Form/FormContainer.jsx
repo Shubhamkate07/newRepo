@@ -524,7 +524,7 @@ const isFormFilled =
                   },
                 }}
               />
-
+  <Grid container spacing={1}>
 <Grid item xs={4}>
      <TextField
   fullWidth
@@ -645,6 +645,62 @@ const isFormFilled =
 
 
                 </Grid>
+
+
+
+
+
+                <Grid item xs={4}>
+              <TextField
+  fullWidth // Makes the TextField take up the full width of its container
+  label="Pincode" // Label for the input field
+  name="postalCode" // Name attribute for the input
+  variant="outlined" // Outlined variant for the TextField
+  type="text" // Explicitly specifies the input type as text
+  value={formData.postalCode} // Controlled value from formData
+onChange={handleChange}
+  required // Indicates that this field is required
+  placeholder="postalCode" // Placeholder text
+  InputProps={{
+    startAdornment: (
+      <InputAdornment position="start">
+        <PersonIcon sx={{ color: '#f6ae22' }} /> {/* Icon displayed inside the input */}
+      </InputAdornment>
+    ),
+    style: {
+      color: '#eeeeee', // Text color inside the input
+      borderradius: '8px', // Border radius for the input
+    },
+  }}
+  InputLabelProps={{
+    sx: {
+      color: '#f6ae22', // Color of the label
+      '&.Mui-focused': {
+        color: '#f6ae22', // Color of the label when focused
+      },
+    },
+  }}
+  sx={{
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#f6ae22', // Border color for the input
+        borderradius: '30px', // Border radius for the fieldset
+      },
+      '&:hover fieldset': {
+        borderColor: '#f6ae22', // Border color on hover
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#f6ae22', // Border color when focused
+      },
+    },
+  }}
+/>
+
+              </Grid>
+              </Grid>
+
+
+                
 
               <Grid container spacing={2}>
                 <Grid item xs={6}>
