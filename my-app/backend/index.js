@@ -139,12 +139,13 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const User = require("./models/ER-Module");
+const User = require("./models/ER-Module"); // Ensure correct model path
+
 const app = express();
 const port = process.env.PORT || 5000;
 
+// Allowed origins for CORS
 const allowedOrigins = ['https://new-repo-bice.vercel.app', 'http://localhost:3000'];
-
 
 app.use(cors({
     origin: (origin, callback) => {
@@ -160,16 +161,20 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-mongoose.connect(process.env.MONGO_URI)
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.error("MongoDB connection error:", err));
 
-    app.get('/',(req,res)=>{
-        res.json("backend started")
-    })
+// Health check endpoint
+app.get('/', (req, res) => {
+    res.json({ message: "Backend started successfully!" });
+});
 
+// API endpoint to handle form submission
 app.post('/api/submit', async (req, res) => {
     try {
+        // Extract data from request body
         const userData = {
             name: req.body.name,
             location: req.body.location,
@@ -190,14 +195,18 @@ app.post('/api/submit', async (req, res) => {
         };
 
         console.log("Request Body:", req.body);
+
+        // Save data to the database
         await User.insertMany([userData]);
+
         res.status(201).json({ message: 'User data saved successfully!' });
     } catch (error) {
         console.error("Error saving user data:", error);
-        res.status(500).json({ message: 'Failed to save user data' });
+        res.status(500).json({ message: 'Failed to save user data', error: error.message });
     }
 });
 
+// Start the server
 app.listen(port, () => {
-    console.log(`Server is running on port ${process.env.HOST} ${port}`);
+    console.log(`Server is running on http://${process.env.HOST || 'localhost'}:${port}`);
 });
