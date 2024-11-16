@@ -132,118 +132,63 @@ const ResponsiveGrid = () => {
   //     })
   //     .catch((error) => console.error("Error fetching cities:", error));
   // };
-//   const handleSubmit = (e) => {
-//     e.preventDefault(); // Prevent the default form submission
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent the default form submission
 
-// //  formData.state=selectedState;
-// //  formData.city=selectedCity;
+//  formData.state=selectedState;
+//  formData.city=selectedCity;
  
 
-//  console.log(formData.state);
+ console.log(formData.state);
  
 
 
 
-//     // Create the request options
-//     const requestOptions = {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json', // Specify content type
-//         },
-//         body: JSON.stringify(formData), // Convert formData to JSON string
-//     };
+    // Create the request options
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', // Specify content type
+        },
+        body: JSON.stringify(formData), // Convert formData to JSON string
+    };
 
 
 
    
-//     // Send data to backend 
-//     fetch('https://newrepo-3rjx.onrender.com/api/submit', requestOptions)
+    // Send data to backend 
+    fetch('https://newrepo-3rjx.onrender.com/api/submit', requestOptions)
 
-//         .then((response) => { 
-//             if (!response.ok) {
-//                 throw new Error('Network response was not ok');
-//             }
-//             return response.json();
-//         })
-//         .then((data) => {
-//             console.log(data); // Handle the response from the server
-//             // You can display a success message or perform other actions
-//         })
-//         .catch((error) => {
-//             console.error('There was a problem with the fetch operation:', error);
-//         });
-//         toast.success("Form Submitted sucessfully",{
-//           position:"top-center"
-//         })
+        .then((response) => { 
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data); // Handle the response from the server
+            // You can display a success message or perform other actions
+        })
+        .catch((error) => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+        toast.success("Form Submitted sucessfully",{
+          position:"top-center"
+        })
 
 
-//         setFormData({
-//           address: '',
-//     state: '',
-//     city: '',
-//     postalCode: '',
-//     Education: '',
-//     educationStatus: '',
-//     listenedDate: '',
+        setFormData({
+          address: '',
+    state: '',
+    city: '',
+    postalCode: '',
+    Education: '',
+    educationStatus: '',
+    listenedDate: '',
           
-//         })
+        })
 
-//       }
-
-
-const handleSubmit = (e) => {
-  e.preventDefault(); // Prevent default form submission
-
-  // Ensure selected state and city are set correctly
-  formData.state = selectedState || formData.state;
-  formData.city = selectedCity || formData.city;
-
-  console.log("Form Data:", formData); // Debugging
-
-  // Create the request options
-  const requestOptions = {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json', // Specify content type
-      },
-      body: JSON.stringify(formData), // Convert formData to JSON string
-  };
-
-  // Send data to backend
-  fetch('https://newrepo-3rjx.onrender.com/api/submit', requestOptions)
-      .then((response) => {
-          if (!response.ok) {
-              return response.json().then((error) => {
-                  throw new Error(error.message || 'Network response was not ok');
-              });
-          }
-          return response.json();
-      })
-      .then((data) => {
-          console.log("Server Response:", data);
-          toast.success("Form Submitted successfully", {
-              position: "top-center",
-          });
-
-          // Clear the form
-          setFormData({
-              address: '',
-              state: '',
-              city: '',
-              postalCode: '',
-              Education: '',
-              educationStatus: '',
-              listenedDate: '',
-          });
-      })
-      .catch((error) => {
-          console.error('There was a problem with the fetch operation:', error);
-          toast.error(`Error: ${error.message}`, {
-              position: "top-center",
-          });
-      });
-};
-
+      }
 
   // Dummy function to fetch pincode for a city
   
