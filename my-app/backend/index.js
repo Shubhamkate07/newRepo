@@ -163,10 +163,7 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.MONGO_URI,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 30000,  // Increase timeout to 30 seconds
-    socketTimeoutMS: 30000,           // Socket timeout for operations
-    // poolSize: 10,   
-})
+  })
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.error("MongoDB connection error:", err));
 
@@ -195,12 +192,27 @@ app.post('/api/submit', async (req, res) => {
             listenedDate: req.body.listenedDate,
         };
 
+
+
+        
+
         console.log("Request Body:", req.body);
         await User.insertMany([userData]);
         res.status(201).json({ message: 'User data saved successfully!' });
     } catch (error) {
         console.error("Error saving user data:", error);
         res.status(500).json({ message: 'Failed to save user data' });
+    }
+});
+
+
+app.get('/api/users', async (req, res) => {
+    try {
+        const users = await User.find({});
+        res.status(200).json(users);
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        res.status(500).json({ message: 'Failed to fetch users', error: error.message });
     }
 });
 
