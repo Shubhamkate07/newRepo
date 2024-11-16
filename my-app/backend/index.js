@@ -145,6 +145,7 @@ const port = process.env.PORT || 5000;
 
 const allowedOrigins = ['https://new-repo-bice.vercel.app', 'http://localhost:5173'];
 
+
 app.use(cors({
     origin: (origin, callback) => {
         if (!origin || allowedOrigins.includes(origin)) {
@@ -162,6 +163,10 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.error("MongoDB connection error:", err));
+
+    app.get('/',(req,res)=>{
+        res.json("backend started")
+    })
 
 app.post('/api/submit', async (req, res) => {
     try {
