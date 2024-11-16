@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     address: String,
     state: { type: String, required: true }, // Ensure this is defined and required
     city: { type: String },
-    // postalCode: { type: String },
+    postalCode: { type: String },
     education: { type: String },
     educationStatus: String,
     listenedDate: String
