@@ -160,7 +160,13 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 30000,  // Increase timeout to 30 seconds
+    socketTimeoutMS: 30000,           // Socket timeout for operations
+    poolSize: 10,   
+})
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.error("MongoDB connection error:", err));
 
