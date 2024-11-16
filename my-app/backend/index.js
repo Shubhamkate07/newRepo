@@ -194,5 +194,5 @@ app.post('/api/submit', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port ${process.env.HOST} ${port}`);
 });
