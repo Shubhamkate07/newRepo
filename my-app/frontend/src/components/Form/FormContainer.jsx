@@ -157,7 +157,7 @@ const ResponsiveGrid = () => {
 
    
     // Send data to backend 
-    fetch('https://newrepo-3rjx.onrender.com/api/submit', requestOptions)
+    fetch('https://newrepo-fh5c.onrender.com/api/submit', requestOptions)
 
         .then((response) => { 
             if (!response.ok) {
