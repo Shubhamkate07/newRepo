@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d663d4c4.css",
+    "main.js": "/static/js/main.885aadb8.js",
+    "static/js/453.8ab44547.chunk.js": "/static/js/453.8ab44547.chunk.js",
+    "static/media/img.svg": "/static/media/img.3beba45df48ce0399eade936ea0f87b5.svg",
+    "static/media/City.svg": "/static/media/City.37e84c636e9bed18b496a2f8a76007df.svg",
+    "static/media/State.svg": "/static/media/State.77c3ea8b32d15e2f5c64ea9460e622fc.svg",
+    "static/media/Hear.svg": "/static/media/Hear.0a0ccaa0c8d33111b963f1d1318dcc5d.svg",
+    "static/media/Intrested.svg": "/static/media/Intrested.d4b3b1d96d12bdb4b9938869a444c25e.svg",
+    "static/media/Female.svg": "/static/media/Female.29b56811a5688c7ff8a134f7f0b5477a.svg",
+    "static/media/Male.svg": "/static/media/Male.c153bd5f9d954e32e3361b55942bb5cb.svg",
+    "static/media/Contact.svg": "/static/media/Contact.557b0eee11304b8233b84f854119b093.svg",
+    "static/media/Pincode.svg": "/static/media/Pincode.87f5cb8bae33e94c84236873eebe5983.svg",
+    "static/media/location.svg": "/static/media/location.bf44aa2b43d0d0a09dde47c568c8e3e3.svg",
+    "static/media/Email.svg": "/static/media/Email.326798099088a8787d63b6e33234b84c.svg",
+    "index.html": "/index.html",
+    "static/media/Dropdown.svg": "/static/media/Dropdown.9db5b967e76ace5eaddee8cad7bdaedc.svg",
+    "static/media/Education.svg": "/static/media/Education.e9afb8366a916d56756ee0b986675490.svg",
+    "main.d663d4c4.css.map": "/static/css/main.d663d4c4.css.map",
+    "main.885aadb8.js.map": "/static/js/main.885aadb8.js.map",
+    "453.8ab44547.chunk.js.map": "/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d663d4c4.css",
+    "static/js/main.885aadb8.js"
+  ]
+}
