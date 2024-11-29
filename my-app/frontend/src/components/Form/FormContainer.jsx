@@ -157,7 +157,7 @@ const ResponsiveGrid = () => {
 
 
     // Send data to backend 
-    fetch('http://127.0.0.1:5000/api/submit', requestOptions)
+    fetch('https://newrepo-dzu5.onrender.com/api/submit', requestOptions)
 
         .then((response) => { 
             if (!response.ok) {
